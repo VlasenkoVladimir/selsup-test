@@ -13,7 +13,7 @@ public class CrptApi {
 
     private final Semaphore semaphore;
     private final ScheduledExecutorService scheduler;
-    private final TimeUnit timeUnit;
+//    private final TimeUnit timeUnit;
     private final long interval;
     private final AtomicInteger requestCount;
     private final int THREAD_POOL_SIZE = 10;
@@ -24,7 +24,7 @@ public class CrptApi {
         if (requestLimit <= 0) {
             throw new IllegalArgumentException("RequestLimit must be positive");
         }
-        this.timeUnit = timeUnit;
+//        this.timeUnit = timeUnit;
         this.interval = timeUnit.toMillis(1);
         this.semaphore = new Semaphore(requestLimit);
         this.requestCount = new AtomicInteger(0);
